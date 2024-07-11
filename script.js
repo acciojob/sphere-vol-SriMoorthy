@@ -19,6 +19,11 @@ function volume_sphere() {
 
             // Display the calculated volume in the designated output field
     document.getElementById("volume").value = volume;
-}
+  }
 
-window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
+window.onload = function() {
+     document.getElementById("sphere-form").onsubmit = function(event) {
+        event.preventDefault();
+             volume_sphere();
+        }
+    }
